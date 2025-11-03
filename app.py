@@ -1,87 +1,78 @@
-""" class Calculator():
-    def add(x,y):
-        print(x+y)
-        return x + y
-    def add_many(numbers):
-        print(sum(numbers))
-        return sum(numbers)
-    def subtract(numbers):
-        return numbers """
-""" Calculator.add(5,10) """
-""" Calculator.add_many([4,7,9]) """
-
-""" class Hero:
-    def __init__(self, name, money, inventory, strength, intelligence, endurnance):
-        self.name = name
-        self.money = money
-        self.inventory = inventory 
-        self.strength = strength
-        self.intelligence = intelligence
-        self.endurance = endurnance
-    def buy(self,item):
-        self.inventory.append(item)
-        print(self.inventory)
-Juice = Hero("Juice", 50, [], 5,5,5)
-Juice.buy({"title": "Dull_Blade","atk": 10})
-print(Juice.__dict__) """
 
 class Pet:
-    def __init__(self, name, happiness, hygiene, thrist, hunger, energy):
+    def __init__(self, name, happiness, hygiene, thirst, hunger, energy):
         self.name = name
         self.happiness = happiness
         self.hygiene = hygiene
-        self.thirst = thrist
+        self.thirst = thirst
         self.hunger = hunger
-        self.energy = energy
-        energy = 5
-    def play(self, happy, energy):
-        if ('play') == x or ('p') == x:
-            if happy > 80:
-                    print(f"{self.name} is now happy")
-                    energy -= 1
-            elif energy > 0 and happy < 80:
-                self.happiness += happy
-                energy -= 1
-                print(f"{self.name} is playing catch")
-                print(f"{self.name}'s increased to {self.happiness}")
-                print(f"{Pname} now has only {energy} more energy")
-            else:
-                print(f"{Pname} is too tired to play. ")
+        self.energy = 5
+        self.death = False
+    def play(self):
+        if self.happiness > 80:
+            print(f"{self.name} is already very happy!")
+        elif self.energy > 0:
+            self.happiness += 10
+            self.energy -= 1
+            print(f"{self.name} is playing catch!")
+            print(f"Happiness increased to {self.happiness}, energy now {self.energy}")
+        else:
+            print(f"{self.name} is too tired to play.")
+
     def bath(self, hygiene):
-        if ('bath') == x or ('b') == x:
-            if hygiene > 80:
-                energy -= 1
-                print(f"{self.name} is now clean")
-            else: 
-                print(f"{self.name} took a bath")
-                hygiene += 10
-                print(f"{self.name}'s hygiene increased to {hygiene}")
-                energy -= 1
-    def drink(self, thirst):
-        if ('drink') == x or ('d') == x:
-            if thirst > 80:
-                print(f"{self.name} is now hydrated")
-                energy -= 1
-            else: 
-                print(f"{self.name} drank some water")
-                thirst += 10
-                print(f"{self.name}'s hydration increased to {thirst}")
-                energy -= 1
-    def eat(self, hunger):
-        if hunger > 80:
+        if self.hygiene > 80:
+            self.energy -= 1
+            print(f"{self.name} is now clean")
+        else: 
+            print(f"{self.name} took a bath")
+            self.hygiene += 10
+            print(f"{self.name}'s hygiene increased to {hygiene}")
+            self.energy -= 1
+    def drink(self):
+        if self.thirst > 80:
+            print(f"{self.name} is now hydrated")
+            energy -= 1
+        else:
+            print(f"{self.name} drank some water")
+            self.thirst += 10
+            print(f"{self.name}'s hydration increased to {self.thirst}")
+            self.energy -= 1
+            if self.energy == 0:
+                print(f"{self.name} is now tired")
+    def eat(self):
+        if self.hunger > 80:
             print(f"{self.name} is now realy full")
-            energy += 1
+            self.energy += 1
         else: 
             print(f"{self.name} ate some food")
-            hunger += 20
-            print(f"{self.name}'s hunger increased to {hunger}")
+            self.hunger += 20
+            print(f"{self.name}'s hunger increased to {self.hunger}")
             energy += 1
     def death(self,hygiene, thrist, hunger):
         if hygiene == 0 or thrist == 0 or hunger == 0:
             print(f"{Pname} died. Please take better care of yout pet next time!!!")
+            self.death = True
 
 Yourname = input("what is your name?:")
 Petname = input("what is your pet's name?:")
+
 Pname = Pet(f"{Petname}", 50, 50, 50, 50, 5)
 
-story = 
+story = input(f"You come home with {Petname} after buying them from the store ")
+
+action = input("What do you want to do with your pet? play/bath/drink/eat/quit: ")
+while self.energy > 0:
+    self = Petname
+    if action in "play":
+        self.play(self)
+    elif action in "bath":
+        self.bath(self)
+    elif action in "drink":
+        self.drink(self)
+    elif action in "eat":
+        self.eat(self)
+    elif action in "quit":
+        print(f"Goodbye! {Petname} wags his tail at you!")
+        break
+    else:
+        print("Invalid action. Please choose play/bath/drink/eat/quit.")
