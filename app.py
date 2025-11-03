@@ -76,8 +76,12 @@ class Pet:
             hunger += 20
             print(f"{self.name}'s hunger increased to {hunger}")
             energy += 1
+    def death(self,hygiene, thrist, hunger):
+        if hygiene == 0 or thrist == 0 or hunger == 0:
+            print(f"{Pname} died. Please take better care of yout pet next time!!!")
 
 Yourname = input("what is your name?:")
 Petname = input("what is your pet's name?:")
 Pname = Pet(f"{Petname}", 50, 50, 50, 50, 5)
-x = input("What do you want to do with your pet?(play,bath,eat,drink)")
+
+story = 
