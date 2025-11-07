@@ -73,7 +73,7 @@ Petname = input("what is your pet's name?:")
 
 Pname = Pet(f"{Petname}", 40, 50, 50, 50, 5)
 
-story = input(f"You come home with {Petname} after buying them from the store ")
+story = print(f"You come home with {Petname} after buying them from the store ")
 game = True
 while game == True:
     action = input("What do you want to do with your pet? play/bath/drink/eat/quit: ")
@@ -91,7 +91,6 @@ while game == True:
         self.eat()
     elif action == "quit":
         print(f"Goodbye! {Petname} wags his tail at you!")
-        print(f"{Pname}")
         break
     if self.thirst <= 0 or self.hunger <= 0:
         self.death()
