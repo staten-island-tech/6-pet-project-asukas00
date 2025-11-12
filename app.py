@@ -97,4 +97,3 @@ while game == True:
         break
     if action not in ["play", "bath" , "drink" , "eat"]:
         print("Invalid action. Please choose play/bath/drink/eat/quit.")
-        
